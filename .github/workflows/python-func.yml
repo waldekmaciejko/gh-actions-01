@@ -1,0 +1,27 @@
+name: Python func
+
+on:
+    push:
+        paths:
+            - ".github/workflows/python-func.yml"
+            - pyfunc/**
+    workflow_dispatch:
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check python version
+              run: python --version
+
+            - name: Display current directory
+              run: pwd
+
+            - name: List files
+              run: ls -R
+
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: List files
+              run: ls -R

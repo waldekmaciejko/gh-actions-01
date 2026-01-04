@@ -1,0 +1,6 @@
+__pycache__
+*.pyc
+tests/
+tests/*
+my_funcs.py
+shapes.py
