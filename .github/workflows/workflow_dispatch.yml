@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions - new comment words
 
-name: Simple CICD new instance
+name: Simple CICD workflow dispatch
 
 # Controls when the workflow will run
 on:
