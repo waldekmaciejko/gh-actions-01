@@ -2,9 +2,9 @@ name: flask-webapp-build
 
 on:
     push:
-   #     paths:
-   #         - ".github/workflows/flask-webapp-build.yml"
-   #         - "view/**"
+        paths:
+            - ".github/workflows/flask-webapp-build.yml"
+            - "view/**"
     
     workflow_dispatch:
 
@@ -33,5 +33,9 @@ jobs:
             - name: Run Flask webapp
               run: |
                   echo "Starting Flask webapp..."
-                  python view/app.py
+                  #python view/app.py
                   echo "Flask webapp is running."
+
+            - name: Show list of env
+              run: |
+                  pip list
