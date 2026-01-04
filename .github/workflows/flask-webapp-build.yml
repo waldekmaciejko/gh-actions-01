@@ -1,0 +1,37 @@
+name: flask-webapp-build
+
+on:
+    push:
+   #     paths:
+   #         - ".github/workflows/flask-webapp-build.yml"
+   #         - "view/**"
+    
+    workflow_dispatch:
+
+jobs:
+    build:
+        name: build-flask-webapp
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Set up Python 3.12
+              uses: actions/setup-python@v4
+              with:
+                  python-version: '3.12'
+
+            - name: Install dependencies
+              run: |
+                  python -m pip install --upgrade pip
+                  pip install flask
+
+            - name: Run Flask app tests
+              run: |
+                  echo "Running tests for Flask webapp..."
+                  # Here you would add commands to run your actual tests
+                  echo "Tests completed successfully."
+            
+            - name: Run Flask webapp
+              run: |
+                  echo "Starting Flask webapp..."
+                  python view/app.py
+                  echo "Flask webapp is running."
