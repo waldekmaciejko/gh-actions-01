@@ -33,3 +33,14 @@ jobs:
             
             - name: Check python version
               run: python --version 
+
+            - name: Install Python Dependencies
+              uses: py-actions/py-dependency-install@v4
+              with:
+                path: "pyfunc/requirements.txt"
+                update-pip: "true"
+            
+            - name: Run tests
+              working-directory: pyfunc
+              run: pytest -v
+              
